@@ -1,0 +1,87 @@
+body {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.forest {
+  width: 100%;
+  height: 300px;
+}
+.tree1 {
+  position: absolute;
+  bottom: 10px;
+  height: 200px;
+}
+.tree2 {
+  position: absolute;
+  height: 300px;
+  bottom: 10px;
+  left: 800px;
+}
+.tree3 {
+  position: absolute;
+  height: 300px;
+  bottom: 10px;
+  left: 1600px;
+}
+.tree4 {
+  position: absolute;
+  height: 300px;
+  bottom: 10px;
+  left: 2400px;
+}
+.road {
+  position: relative;
+  width: 100vw;
+  height: 220px;
+  bottom: 10px;
+  z-index: -1;
+}
+.person {
+  position: absolute;
+  height: 250px;
+  bottom: 200px;
+  left: 100px;
+}
+.grass {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 130px;
+  z-index: -1;
+}
+.house1 {
+  position: absolute;
+  bottom: -315px;
+  width: 350px;
+  height: 200px;
+  left: 400px;
+  z-index: 1;
+}
+.house2 {
+  position: absolute;
+  bottom: -315px;
+  width: 350px;
+  height: 200px;
+  left: 1200px;
+  z-index: 1;
+}
+.house3 {
+  position: absolute;
+  bottom: -315px;
+  width: 350px;
+  height: 200px;
+  left: 2000px;
+  z-index: 1;
+}
+.house4 {
+  position: absolute;
+  bottom: -315px;
+  width: 350px;
+  height: 200px;
+  left: 2700px;
+  z-index: 1;
+}
