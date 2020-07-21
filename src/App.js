@@ -26,8 +26,8 @@ const house6 = require("./pictures/house6.png");
 function App() {
   const { ref, playState, getAnimation } = useWebAnimations({
     keyframes: [
-      { transform: "translateX(-210%)" },
-      { transform: "translateX(100%)" },
+      { transform: "translateX(-285%)" },
+      { transform: "translateX(130%)" },
     ],
     timing: {
       duration: 10000,
@@ -57,6 +57,8 @@ function App() {
             <img src={house2} className="house2" />
             <img src={house3} className="house3" />
             <img src={house4} className="house4" />
+            <img src={house5} className="house5" />
+            <img src={house6} className="house6" />
           </div>
         </div>
       </div>
@@ -65,6 +67,9 @@ function App() {
       </div>
       <div>
         <img src={person} className="person" />
+      </div>
+      <div>
+        <img src={bull} className="bull" />
       </div>
       <div>
         <img src={grass} className="grass" />

@@ -1,3 +1,6 @@
+* {
+  user-select: none;
+}
 body {
   box-sizing: border-box;
   margin: 0%;
@@ -5,7 +8,10 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 .forest {
   width: 100%;
   height: 300px;
@@ -46,6 +52,12 @@ body {
   bottom: 200px;
   left: 100px;
 }
+.bull {
+  position: absolute;
+  height: 250px;
+  bottom: 200px;
+  left: 600px;
+}
 .grass {
   position: absolute;
   width: 100%;
@@ -83,5 +95,21 @@ body {
   width: 350px;
   height: 200px;
   left: 2700px;
+  z-index: 1;
+}
+.house5 {
+  position: absolute;
+  bottom: -315px;
+  width: 350px;
+  height: 200px;
+  left: -400px;
+  z-index: 1;
+}
+.house6 {
+  position: absolute;
+  bottom: -315px;
+  width: 350px;
+  height: 200px;
+  left: 3300px;
   z-index: 1;
 }
