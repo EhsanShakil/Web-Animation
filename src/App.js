@@ -46,24 +46,24 @@ function App() {
       }
     >
       <div>
-        <img src={forest} className="forest" alt="forest picture" />
-        <img src={tree5} className="tree1gif" alt="tree1gif picture" />
-        <img src={tree7} className="tree7" alt="tree7 picture" />
-        <img src={tree6} className="tree2gif" alt="tree2gif picture" />
+        <img src={forest} className="forest" alt="forest" />
+        <img src={tree5} className="tree1gif" alt="tree1gif" />
+        <img src={tree7} className="tree7" alt="tree7" />
+        <img src={tree6} className="tree2gif" alt="tree2gif" />
       </div>
       <div ref={ref}>
         <div>
-          <img src={tree1} className="tree1" alt="tree1 picture" />
-          <img src={tree2} className="tree2" alt="tree2 picture" />
-          <img src={tree3} className="tree3" alt="tree3 picture" />
-          <img src={tree4} className="tree4" alt="tree4 picture" />
+          <img src={tree1} className="tree1" alt="tree1" />
+          <img src={tree2} className="tree2" alt="tree2" />
+          <img src={tree3} className="tree3" alt="tree3" />
+          <img src={tree4} className="tree4" alt="tree4" />
           <div>
-            <img src={house1} className="house1" alt="house1 picture" />
-            <img src={house2} className="house2" alt="house2 picture" />
-            <img src={house3} className="house3" alt="house3 picture" />
-            <img src={house4} className="house4" alt="house4 picture" />
-            <img src={house5} className="house5" alt="house5 picture" />
-            <img src={house6} className="house6" alt="house6 picture" />
+            <img src={house1} className="house1" alt="house1" />
+            <img src={house2} className="house2" alt="house2" />
+            <img src={house3} className="house3" alt="house3" />
+            <img src={house4} className="house4" alt="house4" />
+            <img src={house5} className="house5" alt="house5" />
+            <img src={house6} className="house6" alt="house6" />
           </div>
         </div>
       </div>
