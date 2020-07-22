@@ -26,7 +26,7 @@ const house5 = require("./pictures/house5.png");
 const house6 = require("./pictures/house6.png");
 
 function App() {
-  const { ref, playState, getAnimation } = useWebAnimations({
+  const { ref, getAnimation } = useWebAnimations({
     keyframes: [
       { transform: "translateX(-285%)" },
       { transform: "translateX(130%)" },
