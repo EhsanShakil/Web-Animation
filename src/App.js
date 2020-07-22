@@ -35,7 +35,7 @@ function App() {
       { transform: "translateX(130%)" },
     ],
     timing: {
-      duration: 25000,
+      duration: 30000,
       iterations: Infinity,
       easing: "ease-in-out",
       direction: "reverse",
