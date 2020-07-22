@@ -68,16 +68,16 @@ function App() {
         </div>
       </div>
       <div>
-        <img src={road} className="road" />
+        <img src={road} className="road" alt="road" />
       </div>
       <div>
-        <img src={person} className="person" />
+        <img src={person} className="person" alt="person" />
       </div>
       <div>
-        <img src={cow} className="bull" />
+        <img src={cow} className="cow" alt="cow" />
       </div>
       <div>
-        <img src={grass} className="grass" />
+        <img src={grass} className="grass" alt="grass" />
       </div>
       <div></div>
     </div>
