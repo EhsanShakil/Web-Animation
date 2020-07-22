@@ -5,12 +5,9 @@ import useWebAnimations from "@wellyshen/use-web-animations";
 const person = require("./pictures/person.gif");
 const cow = require("./pictures/cow.gif");
 const grass = require("./pictures/grass.png");
-const helicopter = require("./pictures/helicopter.gif");
 const forest = require("./pictures/forest.png");
-const boundary = require("./pictures/boundary.png");
 
 const road = require("./pictures/road.jpg");
-const roadgif = require("./pictures/road.gif");
 
 const tree1 = require("./pictures/tree1.png");
 const tree2 = require("./pictures/tree2.png");
@@ -49,24 +46,24 @@ function App() {
       }
     >
       <div>
-        <img src={forest} className="forest" />
-        <img src={tree5} className="tree1gif" />
-        <img src={tree7} className="tree7" />
-        <img src={tree6} className="tree2gif" />
+        <img src={forest} className="forest" alt="forest picture" />
+        <img src={tree5} className="tree1gif" alt="tree1gif picture" />
+        <img src={tree7} className="tree7" alt="tree7 picture" />
+        <img src={tree6} className="tree2gif" alt="tree2gif picture" />
       </div>
       <div ref={ref}>
         <div>
-          <img src={tree1} className="tree1" />
-          <img src={tree2} className="tree2" />
-          <img src={tree3} className="tree3" />
-          <img src={tree4} className="tree4" />
+          <img src={tree1} className="tree1" alt="tree1 picture" />
+          <img src={tree2} className="tree2" alt="tree2 picture" />
+          <img src={tree3} className="tree3" alt="tree3 picture" />
+          <img src={tree4} className="tree4" alt="tree4 picture" />
           <div>
-            <img src={house1} className="house1" />
-            <img src={house2} className="house2" />
-            <img src={house3} className="house3" />
-            <img src={house4} className="house4" />
-            <img src={house5} className="house5" />
-            <img src={house6} className="house6" />
+            <img src={house1} className="house1" alt="house1 picture" />
+            <img src={house2} className="house2" alt="house2 picture" />
+            <img src={house3} className="house3" alt="house3 picture" />
+            <img src={house4} className="house4" alt="house4 picture" />
+            <img src={house5} className="house5" alt="house5 picture" />
+            <img src={house6} className="house6" alt="house6 picture" />
           </div>
         </div>
       </div>
