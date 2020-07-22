@@ -20,6 +20,7 @@ body {
   position: absolute;
   bottom: 10px;
   height: 200px;
+  z-index: 1;
 }
 .tree2 {
   position: absolute;
@@ -112,4 +113,25 @@ body {
   height: 200px;
   left: 3300px;
   z-index: 1;
+}
+.tree1gif {
+  position: absolute;
+  height: 250px;
+  right: 1000px;
+}
+.tree2gif {
+  position: absolute;
+  height: 250px;
+  right: 100px;
+}
+.tree3gif {
+  position: absolute;
+  height: 450px;
+  right: 100px;
+}
+.tree7 {
+  position: absolute;
+  height: 300px;
+  right: 400px;
+  top: -10px;
 }

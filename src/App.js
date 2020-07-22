@@ -3,18 +3,23 @@ import "./App.css";
 import useWebAnimations from "@wellyshen/use-web-animations";
 
 const person = require("./pictures/person.gif");
-const bull = require("./pictures/bull.gif");
+const cow = require("./pictures/cow.gif");
 const grass = require("./pictures/grass.png");
 const helicopter = require("./pictures/helicopter.gif");
 const forest = require("./pictures/forest.png");
 const boundary = require("./pictures/boundary.png");
 
 const road = require("./pictures/road.jpg");
+const roadgif = require("./pictures/road.gif");
 
 const tree1 = require("./pictures/tree1.png");
 const tree2 = require("./pictures/tree2.png");
 const tree3 = require("./pictures/tree3.png");
 const tree4 = require("./pictures/tree4.png");
+const tree7 = require("./pictures/tree7.png");
+
+const tree5 = require("./pictures/tree1.gif");
+const tree6 = require("./pictures/tree2.gif");
 
 const house1 = require("./pictures/house1.png");
 const house2 = require("./pictures/house2.png");
@@ -30,7 +35,7 @@ function App() {
       { transform: "translateX(130%)" },
     ],
     timing: {
-      duration: 10000,
+      duration: 36000,
       iterations: Infinity,
       easing: "ease-in-out",
       direction: "reverse",
@@ -45,6 +50,9 @@ function App() {
     >
       <div>
         <img src={forest} className="forest" />
+        <img src={tree5} className="tree1gif" />
+        <img src={tree7} className="tree7" />
+        <img src={tree6} className="tree2gif" />
       </div>
       <div ref={ref}>
         <div>
@@ -69,11 +77,12 @@ function App() {
         <img src={person} className="person" />
       </div>
       <div>
-        <img src={bull} className="bull" />
+        <img src={cow} className="bull" />
       </div>
       <div>
         <img src={grass} className="grass" />
       </div>
+      <div></div>
     </div>
   );
 }
