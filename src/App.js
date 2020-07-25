@@ -1,87 +1,162 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./App.css";
-import useWebAnimations from "@wellyshen/use-web-animations";
 
-const person = require("./pictures/person.gif");
-const cow = require("./pictures/cow.gif");
-const grass = require("./pictures/grass.png");
-const forest = require("./pictures/forest.png");
+const App = () => {
+  const background1 = useRef(null);
+  const background2 = useRef(null);
+  const foreground1 = useRef(null);
+  const foreground2 = useRef(null);
+  const redQueen_alice_sprite = useRef(null);
+  useEffect(() => {
+    var sceneryFrames = [
+      { transform: "translateX(100%)" },
+      { transform: "translateX(-100%)" },
+    ];
 
-const road = require("./pictures/road.jpg");
-
-const tree1 = require("./pictures/tree1.png");
-const tree2 = require("./pictures/tree2.png");
-const tree3 = require("./pictures/tree3.png");
-const tree4 = require("./pictures/tree4.png");
-const tree7 = require("./pictures/tree7.png");
-
-const tree5 = require("./pictures/tree1.gif");
-const tree6 = require("./pictures/tree2.gif");
-
-const house1 = require("./pictures/house1.png");
-const house2 = require("./pictures/house2.png");
-const house3 = require("./pictures/house3.png");
-const house4 = require("./pictures/house4.png");
-const house5 = require("./pictures/house5.png");
-const house6 = require("./pictures/house6.png");
-
-function App() {
-  const { ref, getAnimation } = useWebAnimations({
-    keyframes: [
-      { transform: "translateX(-285%)" },
-      { transform: "translateX(130%)" },
-    ],
-    timing: {
-      duration: 30000,
+    var sceneryTimingBackground = {
+      duration: 36000,
       iterations: Infinity,
-      easing: "ease-in-out",
-      direction: "reverse",
-    },
-  });
+    };
 
-  return (
-    <div
-      onClick={() =>
-        getAnimation().updatePlaybackRate(getAnimation().playbackRate * 1.2)
+    var sceneryTimingForeground = {
+      duration: 12000,
+      iterations: Infinity,
+    };
+    var spriteFrames = [
+      { transform: "translateY(0)" },
+      { transform: "translateY(-100%)" },
+    ];
+    var background1Movement = background1.current.animate(
+      sceneryFrames,
+      sceneryTimingBackground
+    );
+    background1Movement.currentTime =
+      background1Movement.effect.getTiming().duration / 2;
+
+    var background2Movement = background2.current.animate(
+      sceneryFrames,
+      sceneryTimingBackground
+    );
+    var foreground1Movement = foreground1.current.animate(
+      sceneryFrames,
+      sceneryTimingForeground
+    );
+    foreground1Movement.currentTime =
+      foreground1Movement.effect.getTiming().duration / 2;
+
+    var foreground2Movement = foreground2.current.animate(
+      sceneryFrames,
+      sceneryTimingForeground
+    );
+    var redQueen_alice = redQueen_alice_sprite.current.animate(spriteFrames, {
+      easing: "steps(7, end)",
+      direction: "reverse",
+      duration: 600,
+      playbackRate: 1,
+      iterations: Infinity,
+    });
+
+    var sceneries = [
+      foreground1Movement,
+      foreground2Movement,
+      background1Movement,
+      background2Movement,
+    ];
+
+    var adjustBackgroundPlayback = () => {
+      if (redQueen_alice.playbackRate < 0.8) {
+        sceneries.forEach(function (anim) {
+          anim.playbackRate = (redQueen_alice.playbackRate / 2) * -1;
+        });
+      } else if (redQueen_alice.playbackRate > 1.2) {
+        sceneries.forEach((anim) => {
+          anim.playbackRate = redQueen_alice.playbackRate / 2;
+        });
+      } else {
+        sceneries.forEach((anim) => {
+          anim.playbackRate = 0;
+        });
       }
-    >
-      <div>
-        <img src={forest} className="forest" alt="forest" />
-        <img src={tree5} className="tree1gif" alt="tree1gif" />
-        <img src={tree7} className="tree7" alt="tree7" />
-        <img src={tree6} className="tree2gif" alt="tree2gif" />
-      </div>
-      <div ref={ref}>
-        <div>
-          <img src={tree1} className="tree1" alt="tree1" />
-          <img src={tree2} className="tree2" alt="tree2" />
-          <img src={tree3} className="tree3" alt="tree3" />
-          <img src={tree4} className="tree4" alt="tree4" />
-          <div>
-            <img src={house1} className="house1" alt="house1" />
-            <img src={house2} className="house2" alt="house2" />
-            <img src={house3} className="house3" alt="house3" />
-            <img src={house4} className="house4" alt="house4" />
-            <img src={house5} className="house5" alt="house5" />
-            <img src={house6} className="house6" alt="house6" />
-          </div>
+    };
+    setInterval(function () {
+      /* Set decay */
+      if (redQueen_alice.playbackRate > 0.4) {
+        redQueen_alice.playbackRate *= 0.9;
+      }
+      adjustBackgroundPlayback();
+    }, 3000);
+
+    var goFaster = function () {
+      /* But you can speed them up by giving the screen a click or a tap. */
+      redQueen_alice.playbackRate *= 1.1;
+      adjustBackgroundPlayback();
+    };
+    window.addEventListener("click", goFaster);
+  });
+  return (
+    <div className="wrapper">
+      <div className="sky"></div>
+      <div className="earth">
+        <div id="red-queen_and_alice">
+          <img
+            id="red-queen_and_alice_sprite"
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/sprite_running-alice-queen_small.png"
+            alt="Alice and the Red Queen running to stay in place."
+            ref={redQueen_alice_sprite}
+          />
         </div>
       </div>
-      <div>
-        <img src={road} className="road" alt="road" />
+
+      <div className="scenery" id="foreground1" ref={foreground1}>
+        <img
+          id="palm3"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm3_small.png"
+          alt=" "
+        />
       </div>
-      <div>
-        <img src={person} className="person" alt="person" />
+      <div className="scenery" id="foreground2" ref={foreground2}>
+        <img
+          id="bush"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/bush_small.png"
+          alt=" "
+        />
+        <img
+          id="w_rook_upright"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/w_rook_upright_small.png"
+          alt=" "
+        />
       </div>
-      <div>
-        <img src={cow} className="cow" alt="cow" />
+      <div className="scenery" id="background1" ref={background1}>
+        <img
+          id="r_pawn_upright"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_pawn_upright_small.png"
+          alt=" "
+        />
+        <img
+          id="w_rook"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/w_rook_small.png"
+          alt=" "
+        />
+        <img
+          id="palm1"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm1_small.png"
+          alt=" "
+        />
       </div>
-      <div>
-        <img src={grass} className="grass" alt="grass" />
+      <div className="scenery" id="background2" ref={background2}>
+        <img
+          id="r_pawn"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_pawn_small.png"
+          alt=" "
+        />
+
+        <img
+          id="r_knight"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_knight_small.png"
+          alt=" "
+        />
       </div>
-      <div></div>
     </div>
   );
-}
-
+};
 export default App;
