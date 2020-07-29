@@ -19,7 +19,7 @@ const App = () => {
     };
 
     var sceneryTimingForeground = {
-      duration: 11000,
+      duration: 12000,
       iterations: Infinity,
     };
     var spriteFrames = [
